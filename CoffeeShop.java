@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class CoffeeShop {
@@ -94,6 +95,12 @@ public class CoffeeShop {
                     break;
                 }
             }
+
+            double totalCost = beverage.getCost();
+
+            // Format the total cost as currency
+            NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();
+            String formattedTotalCost = currencyFormatter.format(totalCost);
 
             // Print the final description and cost of the Beverage object
             System.out.println("You ordered a " + size + " " + beverage.getDescription() + ".");
